@@ -1,4 +1,8 @@
-import { Injectable, InjectionToken } from "@angular/core";
+import {
+  Inject,
+  Injectable,
+  InjectionToken
+} from "@angular/core";
 
 export interface User {
   name: string;
@@ -28,4 +32,21 @@ export const GREETER = new InjectionToken('Greeter', {
 })
 export class SomethingService {
   street: string
+
+  constructor(@Inject(GREETER) public greeter: typeof Greeter){
+  }
+
+  displayName(){
+   return new this.greeter()
+  }
+}
+
+export interface IConfig {
+  canDeleteItems:boolean
+}
+
+export const APP_CONFIG = new InjectionToken<IConfig>('APP_CONFIG')
+
+export const AppConfig:IConfig ={
+  canDeleteItems:true
 }

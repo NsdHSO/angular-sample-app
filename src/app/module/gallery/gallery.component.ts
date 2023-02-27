@@ -69,6 +69,7 @@ export class GalleryComponent implements OnChanges,OnDestroy {
 
   addQueryInRoute(){
     const queryParams: Params = { name: 'ion', i: 'sami' }
+    this._someService.displayName()
     this._router.navigate([], {
       relativeTo: this._activatedRoute,
       queryParams,
@@ -86,6 +87,7 @@ export class GalleryComponent implements OnChanges,OnDestroy {
       }
     })
     console.log(this._someService.street)
+    this._someService.displayName()
   }
 
   private _loadDynamicComponent(currentValue: string){
