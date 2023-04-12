@@ -33,7 +33,6 @@ export class ReadTimeDirective implements OnInit {
     return Math.trunc(minutes)
   }
   createTimeString(timeString: number){
-    debugger
     if ( timeString === 1 ){
       return '1 minute';
     }else if ( timeString < 1 ){

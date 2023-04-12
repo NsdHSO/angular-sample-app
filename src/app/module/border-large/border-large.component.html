@@ -1,1 +1,12 @@
-<p>border-large works!</p>
+<div>
+  <form [formGroup]="driverForm" (ngSubmit)="save(driverForm)">
+    <div>
+      <p> Name </p>
+      <input [formControl]="driverForm.controls['name'] | getFromC"/>
+    </div>
+  </form>
+  <div *ngIf="driverForm.invalid" class="mt-2 text-xs text-red-600 dark:text-red-400">
+    Form must be valid
+  </div>
+
+</div>

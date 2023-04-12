@@ -19,10 +19,10 @@
 </div>
 <div *ngFor="let count of [].constructor(10); index as index; trackBy: myTrack;">
   <ng-container *ngIf="index %2 ===0">
-    <ng-container *appDelayRender="250 * index">
+    <ng-container *appDelayRender="50 * index">
 
     </ng-container>
-    <ng-container *appDelayRender="420 * index" class="Isvan">
+    <ng-container *appDelayRender="80 * index" class="Isvan">
       salut {{index}} {{address.postal.code}}
     </ng-container>
     <ng-container>
